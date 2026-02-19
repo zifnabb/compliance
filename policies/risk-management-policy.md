@@ -3,7 +3,7 @@
 **Document ID:** POL-RISK-001  
 **Version:** 1.0  
 **Effective Date:** [DATE]  
-**Owner:** [CISO/Security Manager]  
+**Owner:** [Information Security Manager]  
 **Classification:** Internal
 
 ## 1. Purpose
@@ -108,7 +108,7 @@ Each treated risk shall have:
 |------------|-------------------|
 | Low | Department Manager |
 | Medium | Information Security Manager |
-| High | CISO |
+| High | Information Security Manager |
 | Critical | Executive Management |
 
 ## 6. Risk Monitoring

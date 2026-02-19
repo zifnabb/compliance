@@ -3,7 +3,7 @@
 **Document ID:** PROC-AC-001  
 **Version:** 1.0  
 **Effective Date:** [DATE]  
-**Owner:** [IT Manager/Security Manager]  
+**Owner:** [IT Manager]  
 **Classification:** Internal
 
 ## 1. Purpose
@@ -100,7 +100,7 @@ Triggered by:
 
 | Control | Requirement |
 |---------|-------------|
-| Approval | CISO/IT Manager approval required |
+| Approval | Information Security Manager/IT Manager approval required |
 | Separation | Separate admin and regular accounts |
 | MFA | Multi-factor authentication mandatory |
 | Logging | All activity logged and monitored |
@@ -150,10 +150,10 @@ Triggered by:
 | Review Type | Frequency | Reviewer |
 |-------------|-----------|----------|
 | User access | Quarterly | Manager |
-| Privileged access | Monthly | IT Manager/CISO |
+| Privileged access | Monthly | IT Manager/Information Security Manager |
 | Service accounts | Quarterly | System Owner |
 | Terminated users | Weekly | IT/HR |
-| External access | Monthly | Security Manager |
+| External access | Monthly | Information Security Manager |
 
 ### 7.2 Review Process
 

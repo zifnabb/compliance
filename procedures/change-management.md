@@ -99,7 +99,7 @@ This procedure applies to all changes to production systems, networks, applicati
 ### 5.1 Composition
 
 - IT Manager (Chair)
-- Security Manager
+- Information Security Manager
 - Operations Lead
 - Application Owners
 - Infrastructure Lead

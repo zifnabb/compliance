@@ -3,7 +3,7 @@
 **Document ID:** POL-SEC-001  
 **Version:** 1.0  
 **Effective Date:** [DATE]  
-**Owner:** [CISO/Security Manager]  
+**Owner:** [Information Security Manager]  
 **Classification:** Internal
 
 ## 1. Purpose

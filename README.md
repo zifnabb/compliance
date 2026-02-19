@@ -1,17 +1,17 @@
 # ISO 27001 Compliance Template
 
-A comprehensive template for implementing an Information Security Management System (ISMS) compliant with ISO/IEC 27001:2022.
+A structured, editable template for implementing and maintaining an Information Security Management System (ISMS) aligned to ISO/IEC 27001:2022.
 
 ## Overview
 
-This template provides a structured framework for organizations to establish, implement, maintain, and continually improve their information security management system.
+This template provides a starting framework to establish, implement, maintain, and continually improve an ISMS. It is not a substitute for the ISO/IEC 27001:2022 standard or an external audit. Tailor all documents to your scope, regulatory obligations, and risk profile.
 
 ## Directory Structure
 
 ```
 ├── policies/           # Information security policies
 ├── procedures/         # Operational procedures
-├── controls/           # Annex A control documentation
+├── controls/           # Annex A control register and tracking
 ├── evidence/           # Audit evidence and records
 ├── templates/          # Reusable document templates
 └── audits/             # Internal audit records
@@ -20,8 +20,8 @@ This template provides a structured framework for organizations to establish, im
 ## Getting Started
 
 1. **Review the ISMS Policy** - Start with `policies/isms-policy.md`
-2. **Conduct Risk Assessment** - Use `policies/risk-management-policy.md`
-3. **Implement Controls** - Document using templates in `controls/`
+2. **Conduct Risk Assessment** - Use `policies/risk-management-policy.md` and `templates/risk-register.md`
+3. **Implement Controls** - Track progress in `controls/annex-a-controls.md`
 4. **Establish Procedures** - Customize procedures in `procedures/`
 5. **Collect Evidence** - Store audit artifacts in `evidence/`
 
@@ -38,7 +38,7 @@ This template provides a structured framework for organizations to establish, im
 - Change Management Procedure
 
 ### Controls
-- Annex A Control Templates (A.5 - A.8)
+- Annex A control register (all 93 controls in ISO/IEC 27001:2022)
 
 ## Compliance Checklist
 
@@ -55,10 +55,10 @@ This template provides a structured framework for organizations to establish, im
 
 | Category | Description |
 |----------|-------------|
-| A.5 | Organizational Controls |
-| A.6 | People Controls |
-| A.7 | Physical Controls |
-| A.8 | Technological Controls |
+| A.5 | Organizational Controls (37) |
+| A.6 | People Controls (8) |
+| A.7 | Physical Controls (14) |
+| A.8 | Technological Controls (34) |
 
 ## License
 

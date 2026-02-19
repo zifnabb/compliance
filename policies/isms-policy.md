@@ -3,7 +3,7 @@
 **Document ID:** POL-ISMS-001  
 **Version:** 1.0  
 **Effective Date:** [DATE]  
-**Owner:** [CISO/Security Manager]  
+**Owner:** [Information Security Manager]  
 **Classification:** Internal
 
 ## 1. Purpose
@@ -97,4 +97,4 @@ The ISMS shall be continually improved through:
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
 | CEO | | | |
-| CISO | | | |
+| Information Security Manager | | | |

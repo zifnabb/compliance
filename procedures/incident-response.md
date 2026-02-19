@@ -3,7 +3,7 @@
 **Document ID:** PROC-IR-001  
 **Version:** 1.0  
 **Effective Date:** [DATE]  
-**Owner:** [CISO/Security Manager]  
+**Owner:** [Information Security Manager]  
 **Classification:** Internal
 
 ## 1. Purpose
@@ -79,9 +79,9 @@ This procedure applies to all security incidents affecting [Organization Name]'s
 
 | Severity | Notify |
 |----------|--------|
-| P1 | CISO, Executive Team, Legal, PR |
-| P2 | CISO, IT Management |
-| P3 | Security Manager, Asset Owner |
+| P1 | Executive Management, Legal, PR |
+| P2 | Information Security Manager, IT Management |
+| P3 | Information Security Manager, Asset Owner |
 | P4 | Security Analyst |
 
 ### 5.3 Phase 3: Containment
@@ -171,8 +171,8 @@ This procedure applies to all security incidents affecting [Organization Name]'s
 
 | Stakeholder | When to Notify | Who Notifies |
 |-------------|----------------|--------------|
-| Law Enforcement | Criminal activity | Legal/CISO |
-| Regulators | Reportable breach | Legal/CISO |
+| Law Enforcement | Criminal activity | Legal/Information Security Manager |
+| Regulators | Reportable breach | Legal/Information Security Manager |
 | Customers | Data breach affecting them | Executive/PR |
 | Media | Major incident | PR/Executive |
 
