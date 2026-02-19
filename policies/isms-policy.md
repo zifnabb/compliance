@@ -90,7 +90,7 @@ The ISMS shall be continually improved through:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [DATE] | [Author] | Initial release |
+| 1.0 | 2026-02-19 | Terrence | Initial release |
 
 ## 9. Approval
 
