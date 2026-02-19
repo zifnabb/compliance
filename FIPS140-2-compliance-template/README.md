@@ -1,4 +1,5 @@
 # FIPS 140-2 Compliance Template
+Updated 19-Feb-26
 
 A structured, editable template for preparing documentation and evidence for a FIPS 140-2 cryptographic module validation effort.
 
@@ -32,3 +33,4 @@ This template shall help you organize artifacts for a lab engagement and CMVP su
 - Self-tests and integrity checks (power-up and conditional)
 - Configuration management and design assurance records
 - Mitigation of other attacks (if applicable)
+
