@@ -213,3 +213,103 @@ If your auditors expect “single-source-of-truth” mapping rather than distrib
 - Add `iso27001-compliance-template/policies/document-hierarchy.md` that states which docs are authoritative (business vs ISO templates) and how conflicts are resolved.
 - Add a one-page “Scope Statement” under `iso27001-compliance-template/policies/` and reference it from ISMS policy and Annex A register.
 
+---
+
+## SWIFT CSCF (to move more controls to “Met”)
+
+**Based on:** `outputs/policy-audit-2026-03-03/swift-cscf-policy-audit.md`
+
+### 1) Declare CSCF architecture type(s) + SWIFT boundary explicitly
+
+**Why:** Several CSCF controls are architecture-dependent and/or expect an explicitly segregated “SWIFT environment”. Business policies are strong, but they do not declare the SWIFT boundary or architecture type(s) in scope.
+
+**Add/clarify in provided docs:**
+
+- Populate `swift-cscf-compliance-template/controls/architecture-types.md` with:
+  - selected architecture type(s) (A1/A2/A3/A4/B),
+  - in-scope SWIFT components,
+  - in-scope environments (prod/DR/UAT),
+  - explicit exclusions with justification.
+- Add a short “SWIFT environment definition” section to `swift-cscf-compliance-template/policies/cscf-compliance-policy.md` that:
+  - defines the SWIFT secure zone boundary,
+  - references the enforcing business policies (network segmentation, privileged access, logging).
+
+This is the fastest path to move CSCF **1.1** from Partial toward Met.
+
+### 2) CSCF 1.5 (Customer Environment Protection) — treat as scoped/not applicable unless A4
+
+**Why:** CSCF control 1.5 applies to architecture A4 only.
+
+**Add/clarify in provided docs:**
+
+- If A4 is **not** selected: mark **Not Applicable** in `swift-cscf-compliance-template/controls/cscf-controls.md` with a one-paragraph justification referencing `swift-cscf-compliance-template/controls/architecture-types.md`.
+- If A4 **is** selected: add an A4-specific “customer environment requirements” addendum under `swift-cscf-compliance-template/procedures/` and reference supporting business policies:
+  - `business/Access-Control-Policy.pdf`
+  - `business/Data-Classification-and-Handling-Policy.pdf`
+  - `business/Encryption-and-Cryptography-Policy.pdf`
+
+### 3) CSCF 2.11A (RMA Business Controls) — add SWIFT-specific mapping
+
+**Why:** Business documentation covers access control broadly, but not SWIFT RMA-specific roles/workflows.
+
+**Add/clarify in provided docs:**
+
+- Create `swift-cscf-compliance-template/procedures/rma-controls.md` (or equivalent) documenting:
+  - RMA admin/operator roles and approvals,
+  - segregation of duties for RMA changes,
+  - logging/monitoring expectations for RMA actions,
+  - evidence locations under `swift-cscf-compliance-template/evidence/`.
+- Cross-reference:
+  - `business/Access-Control-Policy.pdf` (privileged access, session recording, approvals)
+  - `business/Logging-and-Monitoring-Policy.pdf` (log retention/integrity)
+  - `business/Change-Management-Policy.pdf` (change approvals/records)
+
+### 4) CSCF 5.2 (Token Management) — consolidate into a single written standard
+
+**Why:** Token handling exists across docs (MFA tokens; hardware tokens), but CSCF expects a coherent “token management” control set.
+
+**Add/clarify in provided docs:**
+
+- Add `swift-cscf-compliance-template/procedures/token-management.md` covering:
+  - token issuance/provisioning,
+  - custody/storage,
+  - loss/theft/compromise response,
+  - periodic inventory/reconciliation,
+  - revocation/rotation triggers,
+  - evidence expectations.
+- Reference supporting business sources:
+  - `business/Access-Control-Policy.pdf` (MFA; privileged controls)
+  - `business/Encryption-Key-Management-Procedure.pdf` (hardware tokens; vault controls)
+  - `business/Security-Offboarding-Procedure.pdf` (token return)
+
+This moves CSCF **5.2** from Partial toward Met.
+
+### 5) CSCF 6.3 (Database Integrity) — document DB integrity controls explicitly
+
+**Why:** Logging/FIM and SDLC practices exist, but “database integrity” is not consolidated as a distinct requirement set.
+
+**Add/clarify in provided docs:**
+
+- Create `swift-cscf-compliance-template/procedures/database-integrity.md` documenting:
+  - privileged DB change control and monitoring,
+  - integrity of transaction records (immutability/append-only expectations where applicable),
+  - backup/restore integrity verification,
+  - alerting for anomalous DB changes,
+  - evidence sources (reports/log exports).
+- Reference:
+  - `business/Logging-and-Monitoring-Policy.pdf` (integrity monitoring, log integrity concepts)
+  - `business/Change-Management-Policy.pdf` (change governance)
+  - `business/Backup-and-Recovery-Policy.pdf` / `business/Business-Continuity-and-Disaster-Recovery-Policy.pdf` (integrity verification during recovery), if in scope
+
+### 6) CSCF 7.4A (Scenario-based Risk Assessment) — add a repeatable scenario library artifact
+
+**Why:** Risk management policy exists, but there is no explicit scenario-based risk assessment artifact/workflow.
+
+**Add/clarify in provided docs:**
+
+- Add `swift-cscf-compliance-template/templates/scenario-risk-assessment.md` and an `evidence/7.4A-scenarios/` folder containing:
+  - a small scenario library (e.g., credential theft, privileged misuse, SWIFT transaction manipulation, malware on operator workstation),
+  - likelihood/impact, controls mapped, and residual risk decisions.
+- Reference:
+  - `business/Risk-Management-Policy.pdf`
+  - `business/Incident-Response-Policy.pdf` (tabletops / lessons learned feed back into scenarios)
