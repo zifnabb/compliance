@@ -313,3 +313,86 @@ This moves CSCF **5.2** from Partial toward Met.
 - Reference:
   - `business/Risk-Management-Policy.pdf`
   - `business/Incident-Response-Policy.pdf` (tabletops / lessons learned feed back into scenarios)
+
+---
+
+## PCI DSS (to move more requirements to “Met”)
+
+**Based on:** `outputs/policy-audit-2026-03-03/pci-dss-policy-audit.md`
+
+### 1) Create an explicit PCI scope + CDE definition artifact
+
+**Why:** Multiple PCI requirements were assessed as Partial primarily because the business policies are not explicitly scoped to a **Cardholder Data Environment (CDE)** and do not define “account data” in PCI terms.
+
+**Add/clarify in provided docs:**
+
+- Populate `pci-dss-compliance-template/controls/scope-and-cde.md` with:
+  - PCI role (merchant/service provider),
+  - payment channels,
+  - account data handled (PAN/SAD if applicable),
+  - CDE boundary and connected-to systems,
+  - segmentation approach and exclusions.
+
+This is the fastest way to move requirements **3, 4, 9, 10** from Partial toward Met (documentation-scoped).
+
+### 2) Add a PCI “Account Data Handling Standard” overlay (Requirement 3)
+
+**Why:** Business data classification/handling and encryption policies exist, but there is no explicit “PAN/account data” policy set (masking, storage prohibition rules, retention rules) expressed in PCI language.
+
+**Add/clarify in provided docs:**
+
+- Add `pci-dss-compliance-template/policies/account-data-handling-standard.md` that defines:
+  - what “account data” means in your environment (and whether you store PAN),
+  - where PAN may/shall not be stored,
+  - masking/truncation rules for display (where applicable),
+  - retention schedule specific to account data,
+  - secure deletion and media handling expectations.
+- Cross-reference existing business documents:
+  - `business/Data-Classification-and-Handling-Policy.pdf`
+  - `business/Encryption-and-Cryptography-Policy.pdf`
+  - `business/Encryption-Key-Management-Procedure.pdf`
+  - `business/Data-Disposal-and-Destruction-Procedure.pdf`
+
+### 3) Add a PCI “Transmission Crypto Standard” overlay (Requirement 4)
+
+**Why:** Encryption/transmission is covered generally, but PCI typically expects explicit approved protocols/ciphers/config standards for transmission of cardholder data across open/public networks.
+
+**Add/clarify in provided docs:**
+
+- Add `pci-dss-compliance-template/policies/transmission-crypto-standard.md` documenting:
+  - approved protocols (TLS versions), certificate requirements,
+  - prohibited protocols/ciphers,
+  - where encryption is mandatory (all CHD across open/public networks),
+  - evidence expectations (config snapshots, scans, monitoring).
+- Cross-reference:
+  - `business/Encryption-and-Cryptography-Policy.pdf`
+  - `business/Network-Security-Policy.pdf`
+
+### 4) Add a CDE-scoped logging and monitoring profile (Requirement 10)
+
+**Why:** Logging is robust, but “CDE scope” and specific log review cadence is not declared as a PCI artifact.
+
+**Add/clarify in provided docs:**
+
+- Add `pci-dss-compliance-template/procedures/cde-logging-monitoring-profile.md` specifying:
+  - in-scope log sources for CDE components,
+  - retention and integrity expectations for CDE logs,
+  - alerting thresholds and review cadence,
+  - evidence outputs (monthly review reports, alert triage records).
+- Reference:
+  - `business/Logging-and-Monitoring-Policy.pdf`
+  - `business/Access-Control-Policy.pdf` (privileged session logging/recording)
+
+### 5) Map physical controls to “where account data exists” (Requirement 9)
+
+**Why:** Physical security policy exists, but PCI expects explicit mapping of storage/processing locations (or confirmation that no physical media contains CHD).
+
+**Add/clarify in provided docs:**
+
+- Add a short “CDE physical footprint” section to `pci-dss-compliance-template/controls/scope-and-cde.md` documenting:
+  - where CHD is stored/processed (or “no CHD stored” with justification),
+  - physical access controls applicable to those locations,
+  - any removable media rules.
+- Reference:
+  - `business/Physical-Security-Policy.pdf`
+  - `business/Data-Classification-and-Handling-Policy.pdf`
